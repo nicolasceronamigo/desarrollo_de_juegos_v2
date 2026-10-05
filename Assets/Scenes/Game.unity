@@ -167,9 +167,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2253496707831914186, guid: 3f57a784cf9bc3241ae97f7c73997417, type: 3}
+      propertyPath: distanciaInteraccion
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2677801197919258173, guid: 3f57a784cf9bc3241ae97f7c73997417, type: 3}
       propertyPath: m_Name
       value: Grid_casa
+      objectReference: {fileID: 0}
+    - target: {fileID: 2882687441200678644, guid: 3f57a784cf9bc3241ae97f7c73997417, type: 3}
+      propertyPath: distanciaInteraccion
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
