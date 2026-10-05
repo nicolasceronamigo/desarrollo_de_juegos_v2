@@ -6,6 +6,7 @@ public class PuertaVida : MonoBehaviour
     public float vidaMaxima = 100f;
 
     private float vidaActual;
+    private Puerta puerta;
 
     [Header("Daño por zombies")]
     [SerializeField] private float distanciaDeteccion = 1.5f;
@@ -13,11 +14,12 @@ public class PuertaVida : MonoBehaviour
     [SerializeField] private float danoPorSegundo = 10f;
 
     [SerializeField] private LayerMask zombieLayer;
+    [SerializeField] private Transform puntoDeteccionZombies;
 
     private int ContarZombiesCerca()
     {
         Collider2D[] zombies = Physics2D.OverlapCircleAll(
-            transform.position,
+            puntoDeteccionZombies.position,
             distanciaDeteccion,
             zombieLayer
         );
@@ -27,6 +29,9 @@ public class PuertaVida : MonoBehaviour
 
     void Update()
     {
+        if (puerta.EstaAbierta)
+            return;
+
         int cantidadZombies = ContarZombiesCerca();
 
         if (cantidadZombies >= zombiesNecesarios)
@@ -38,6 +43,7 @@ public class PuertaVida : MonoBehaviour
     void Start()
     {
         vidaActual = vidaMaxima;
+        puerta = GetComponent<Puerta>();
     }
 
     public void RecibirDanio(float cantidad)
